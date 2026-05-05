@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dream Ladders</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -21,6 +20,7 @@
       color: white;
     }
 
+    /* HERO */
     .hero {
       display: flex;
       align-items: center;
@@ -73,26 +73,13 @@
       font-weight: 600;
     }
 
-    .primary:hover {
-      background: #0ea5e9;
-    }
-
     .secondary {
       background: transparent;
       border: 1px solid #38bdf8;
       color: #38bdf8;
     }
 
-    .secondary:hover {
-      background: #38bdf8;
-      color: black;
-    }
-
-    .hero-right {
-      position: relative;
-    }
-
-    .circle {
+    .hero-right .circle {
       width: 300px;
       height: 300px;
       border-radius: 50%;
@@ -108,12 +95,89 @@
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.8; }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
-    /* Responsive */
+    /* DEMO SECTION */
+    .demo {
+      padding: 80px 10%;
+      background: #020617;
+    }
+
+    .demo h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .demo-sub {
+      color: #94a3b8;
+      margin-bottom: 20px;
+    }
+
+    .verified {
+      color: #22c55e;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+
+    .note {
+      color: #facc15;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #0f172a;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    th {
+      background: #1e293b;
+      padding: 12px;
+    }
+
+    td {
+      padding: 12px;
+    }
+
+    .alt-row {
+      background: #020617;
+    }
+
+    .blue { color: #38bdf8; }
+    .green { color: #22c55e; }
+    .yellow { color: #facc15; }
+
+    .cta-box {
+      background: #0f172a;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp {
+      background: #22c55e;
+      color: black;
+    }
+
     @media (max-width: 900px) {
       .hero {
         flex-direction: column;
@@ -129,9 +193,8 @@
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
-
-  <!-- LEFT CONTENT -->
   <div class="hero-left">
     <div class="brand">DREAM LADDERS</div>
 
@@ -141,16 +204,95 @@
     </div>
 
     <div class="cta-buttons">
-      <button class="btn primary">Start Estimation</button>
-      <button class="btn secondary">View Demo</button>
+      <!-- Connect to your estimator site -->
+      <button class="btn primary" onclick="window.open('https://rajeshshambudu.github.io/dream-ladders-ai/', '_blank')">
+        Start Estimation
+      </button>
+
+      <!-- Scroll to demo -->
+      <button class="btn secondary" onclick="location.href='#demo'">
+        View Demo
+      </button>
     </div>
   </div>
 
-  <!-- RIGHT CONTENT -->
   <div class="hero-right">
     <div class="circle">
-      <!-- Replace with your AI avatar image -->
-      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Avatar">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section id="demo" class="demo">
+
+  <h2>Real Project. Real Accuracy.</h2>
+
+  <p class="demo-sub">
+    Compare AI-generated estimates with actual manual engineering calculations.
+  </p>
+
+  <p class="verified">✔ Verified by Civil Engineer</p>
+  <p class="note">Based on real site calculation by engineer</p>
+
+  <div class="card">
+    <h3>Project: 1800 Sqft | Ground Floor</h3>
+    <p class="demo-sub">Residential Construction Estimate</p>
+
+    <table>
+      <tr>
+        <th>Component</th>
+        <th>AI Estimate</th>
+        <th>Manual</th>
+        <th>Difference</th>
+      </tr>
+
+      <tr>
+        <td>Steel</td>
+        <td class="blue">7447 kg</td>
+        <td>7450 kg</td>
+        <td class="green">-0.04%</td>
+      </tr>
+
+      <tr class="alt-row">
+        <td>Cement</td>
+        <td class="blue">820 bags</td>
+        <td>835 bags</td>
+        <td class="yellow">-1.8%</td>
+      </tr>
+
+      <tr>
+        <td>Concrete</td>
+        <td class="blue">92 m³</td>
+        <td>94 m³</td>
+        <td class="yellow">-2.1%</td>
+      </tr>
+
+      <tr class="alt-row">
+        <td>Total Cost</td>
+        <td class="blue">₹27.5L</td>
+        <td>₹28L</td>
+        <td class="green">-1.7%</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="cta-box">
+    <h3 class="green">~98% Accurate Estimation</h3>
+
+    <p class="demo-sub">
+      Dream Ladders AI delivers near real-engineer accuracy in seconds.
+    </p>
+
+    <div class="buttons">
+      <button class="btn primary"
+        onclick="window.open('https://rajeshshambudu.github.io/dream-ladders-ai/', '_blank')">
+        Try Your Project →
+      </button>
+
+      <a href="https://wa.me/917093218658" target="_blank">
+        <button class="btn whatsapp">Talk to Engineer</button>
+      </a>
     </div>
   </div>
 
