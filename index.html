@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dream Ladders</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 10%;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+    }
+
+    .hero-left {
+      max-width: 550px;
+    }
+
+    .brand {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s ease;
+    }
+
+    .primary {
+      background: #38bdf8;
+      color: black;
+      font-weight: 600;
+    }
+
+    .primary:hover {
+      background: #0ea5e9;
+    }
+
+    .secondary {
+      background: transparent;
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+    }
+
+    .secondary:hover {
+      background: #38bdf8;
+      color: black;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .circle {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #38bdf8, transparent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 3s infinite;
+    }
+
+    .circle img {
+      width: 180px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-right {
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero">
+
+  <!-- LEFT CONTENT -->
+  <div class="hero-left">
+    <div class="brand">DREAM LADDERS</div>
+
+    <div class="tagline">
+      <span class="highlight">AI-Powered Civil Engineering</span><br>
+      Build smarter. Estimate faster. Make better construction decisions.
+    </div>
+
+    <div class="cta-buttons">
+      <button class="btn primary">Start Estimation</button>
+      <button class="btn secondary">View Demo</button>
+    </div>
+  </div>
+
+  <!-- RIGHT CONTENT -->
+  <div class="hero-right">
+    <div class="circle">
+      <!-- Replace with your AI avatar image -->
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Avatar">
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
