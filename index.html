@@ -1,160 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dream Ladders</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Ladders AI</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<style>
+:root {
+  --bg:#020617;
+  --card:#0f172a;
+  --primary:#38bdf8;
+  --accent:#22c55e;
+  --text:#fff;
+  --muted:#94a3b8;
+}
 
-    body {
-      background: #0f172a;
-      color: white;
-    }
+body {
+  margin:0;
+  font-family:Poppins;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 80px 10%;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-    }
+/* HERO */
+.hero {
+  padding:60px 5%;
+  text-align:center;
+}
 
-    .hero-left {
-      max-width: 550px;
-    }
+.brand {
+  font-size:2.5rem;
+  font-weight:700;
+}
 
-    .brand {
-      font-size: 48px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      margin-bottom: 20px;
-    }
+.tagline {
+  color:var(--muted);
+  margin:20px 0;
+}
 
-    .tagline {
-      font-size: 18px;
-      color: #94a3b8;
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
+.btn {
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
 
-    .highlight {
-      color: #38bdf8;
-      font-weight: 600;
-    }
+.primary { background:var(--primary); }
+.secondary {
+  background:transparent;
+  border:1px solid var(--primary);
+  color:var(--primary);
+}
 
-    .cta-buttons {
-      display: flex;
-      gap: 15px;
-    }
+/* SECTION */
+.section {
+  padding:50px 5%;
+}
 
-    .btn {
-      padding: 12px 24px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s ease;
-    }
+.card {
+  background:var(--card);
+  padding:20px;
+  border-radius:10px;
+  margin-top:20px;
+}
 
-    .primary {
-      background: #38bdf8;
-      color: black;
-      font-weight: 600;
-    }
+/* LOCK */
+.lock-overlay {
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(6px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  border-radius:10px;
+}
 
-    .primary:hover {
-      background: #0ea5e9;
-    }
+input, select {
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+}
 
-    .secondary {
-      background: transparent;
-      border: 1px solid #38bdf8;
-      color: #38bdf8;
-    }
-
-    .secondary:hover {
-      background: #38bdf8;
-      color: black;
-    }
-
-    .hero-right {
-      position: relative;
-    }
-
-    .circle {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #38bdf8, transparent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: pulse 3s infinite;
-    }
-
-    .circle img {
-      width: 180px;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.8; }
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-right {
-        margin-top: 40px;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
+  <h1 class="brand">DREAM LADDERS AI</h1>
+  <p class="tagline">AI-Powered Civil Engineering Estimation</p>
 
-  <!-- LEFT CONTENT -->
-  <div class="hero-left">
-    <div class="brand">DREAM LADDERS</div>
+  <button class="btn primary" onclick="scrollToEstimator()">
+    Start Estimation
+  </button>
+</section>
 
-    <div class="tagline">
-      <span class="highlight">AI-Powered Civil Engineering</span><br>
-      Build smarter. Estimate faster. Make better construction decisions.
-    </div>
+<!-- DEMO -->
+<section class="section">
+  <h2>Real Project Accuracy</h2>
 
-    <div class="cta-buttons">
-      <button class="btn primary">Start Estimation</button>
-      <button class="btn secondary">View Demo</button>
-    </div>
+  <div class="card">
+    <p>Steel: 7447 kg vs 7450 kg</p>
+    <p>Cement: 820 vs 835</p>
+    <p>Cost: ₹27.5L vs ₹28L</p>
   </div>
+</section>
 
-  <!-- RIGHT CONTENT -->
-  <div class="hero-right">
-    <div class="circle">
-      <!-- Replace with your AI avatar image -->
-      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Avatar">
+<!-- ESTIMATOR -->
+<section id="estimator" class="section">
+
+  <h2>AI Construction Estimator</h2>
+
+  <div class="card">
+
+    <input type="number" id="area" placeholder="Area sqft">
+    <input type="number" id="floors" placeholder="Floors">
+
+    <select id="quality">
+      <option value="1500">Standard</option>
+      <option value="1800">Premium</option>
+      <option value="2200">Luxury</option>
+    </select>
+
+    <button class="btn primary" onclick="estimateCost()">Estimate</button>
+
+    <div id="result"></div>
+
+    <!-- LOCKED REPORT -->
+    <div id="locked" style="display:none; position:relative; margin-top:20px;" class="card">
+
+      <div class="lock-overlay">
+        <p>🔒 Detailed Report Locked</p>
+        <button class="btn primary" onclick="unlock()">Unlock ₹499</button>
+      </div>
+
+      <div>
+        <p>Steel: XXXX kg</p>
+        <p>Cement: XXXX bags</p>
+        <p>Foundation Cost: ₹X</p>
+      </div>
+
     </div>
+
   </div>
 
 </section>
+
+<script>
+
+function scrollToEstimator() {
+  document.getElementById("estimator").scrollIntoView({behavior:"smooth"});
+}
+
+function estimateCost() {
+  let area = document.getElementById("area").value;
+  let floors = document.getElementById("floors").value;
+  let rate = document.getElementById("quality").value;
+
+  let cost = area * floors * rate;
+
+  document.getElementById("result").innerHTML =
+    "<h3>₹ " + cost.toLocaleString() + "</h3>";
+
+  document.getElementById("locked").style.display = "block";
+}
+
+function unlock() {
+  window.open("https://wa.me/917093218658?text=I want report ₹499");
+}
+
+</script>
 
 </body>
 </html>
