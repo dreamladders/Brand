@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Ladders App</title>
+
+<style>
+body {
+  font-family: sans-serif;
+  background:#020617;
+  color:white;
+  padding:20px;
+}
+
+.card {
+  background:#0f172a;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+
+input, textarea {
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+}
+
+button {
+  padding:10px;
+  background:#38bdf8;
+  border:none;
+  border-radius:6px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Estimator</h2>
+
+<div class="card">
+  <input id="area" placeholder="Area">
+  <input id="floors" placeholder="Floors">
+
+  <button onclick="calc()">Calculate</button>
+
+  <div id="out"></div>
+</div>
+
+<h2>AI Chat</h2>
+
+<div class="card">
+  <textarea id="q"></textarea>
+  <button onclick="chat()">Ask</button>
+  <div id="ans"></div>
+</div>
+
+<h2>Lead Form</h2>
+
+<div class="card">
+  <input placeholder="Name">
+  <input placeholder="Phone">
+  <button>Submit</button>
+</div>
+
+<script>
+
+function calc(){
+  let a = document.getElementById("area").value;
+  let f = document.getElementById("floors").value;
+  document.getElementById("out").innerHTML = "₹ " + (a*f*1500);
+}
+
+function chat(){
+  document.getElementById("ans").innerHTML = "AI response coming...";
+}
+
+</script>
+
+</body>
+</html>
